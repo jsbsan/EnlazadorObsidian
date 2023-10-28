@@ -6,6 +6,10 @@ Si le pegas la ruta de una carpeta o fichero, crea un enlace del tipo:
 ![imagen de enlace creado](./imagenEnlace.png)
 
 
+Imagen de la aplicación funcionando:
+
+![Imagen de la aplicación](./aplicacion.png)
+
 
 
 
