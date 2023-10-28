@@ -3,7 +3,7 @@
 
 Si le pegas la ruta de una carpeta o fichero, crea un enlace del tipo:
 
-[!imagen de enlace creado](imagenEnlace.png)
+[!imagen de enlace creado](./imagenEnlace.png)
 
 
 
