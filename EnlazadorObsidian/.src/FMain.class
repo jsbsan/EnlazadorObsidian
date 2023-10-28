@@ -1,0 +1,51 @@
+' Gambas class file
+
+Public Sub Buttonpegar_Click()
+
+  TextBoxRuta.Text = Clipboard.Paste("text/plain")
+
+  RellenarPrevisualizacionDeEnlace
+
+End
+
+Public Sub RellenarPrevisualizacionDeEnlace()
+
+  Dim Textoopcional As String
+  Dim ultimo As String[]
+
+  TextBoxRutaConvertida.Text = ""
+
+  If CheckBoxTextOpcional.value = True Then
+    TextoOpcional = "Enlace a "
+  Else
+    TextoOpcional = ""
+  Endif
+
+  Try TextBoxRutaConvertida.Text = "[" & textoOpcional & TextBoxRuta.Text & "]" & convertirEnlace(TextBoxRuta.Text)
+
+  Try ultimo = Split(TextBoxRuta.text, "/")
+
+  Try TextBoxRutaConvertida.Text = "> [!Enlace a: " & Upper(ultimo[ultimo.count - 1]) & "] \n> " & TextBoxRutaConvertida.Text
+
+End
+
+Public Sub Form_Open()
+
+  Label1.Text = Application.name & " Versión: " & Application.version & "             Autor: Julio Sanchez Berro. 2023"
+
+End
+
+Public Function convertirEnlace(enlace As String) As String
+
+  enlace = Replace(enlace, " ", "%20") 'convierto los espacios en %20
+
+  Return "(file:" & enlace & ")"
+
+End
+
+Public Sub ButtonConvertir_Click()
+
+  RellenarPrevisualizacionDeEnlace()
+  Clipboard.Copy(TextBoxRutaConvertida.text)
+
+End

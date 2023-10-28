@@ -1,0 +1,27 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,113,31)
+  Icon = Picture["iconos/enlazadorObsidian.png"]
+  { TextBoxRuta TextBox
+    MoveScaled(2,6,97,6)
+  }
+  { Buttonpegar Button
+    MoveScaled(101,6,9,6)
+    Picture = Picture["icon:/24/paste"]
+  }
+  { ButtonConvertir Button
+    MoveScaled(101,20,9,9)
+    Picture = Picture["iconos/enlazadorObsidian32x32.png"]
+  }
+  { Label1 Label
+    MoveScaled(10,1,60,4)
+  }
+  { CheckBoxTextOpcional CheckBox
+    MoveScaled(18,14,43,3)
+    Text = ("Texto Opcional: \"Enlace a \"")
+  }
+  { TextBoxRutaConvertida TextArea
+    MoveScaled(2,18,97,12)
+  }
+}
