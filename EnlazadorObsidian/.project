@@ -1,17 +1,19 @@
 # Gambas Project File 3.0
 Startup=FMain
 Icon=iconos/enlazadorObsidian.png
-Version=0.0.1
+Version=0.0.2
 Component=gb.image
 Component=gb.gui
 Component=gb.form
+Description="Ruta de una carpeta o fichero externa a la bóveda, lo convierte en formato markdown para Obsidian"
+Authors="Julio Sanchez Berro"
 TabSize=2
 Language=es_ES
 Maintainer=jsbsan
 Address=jusabejusabe@gmail.com
 Url=https://jsbsan.blogspot.com/
 License=General Public License
-PackageName=enlazadorobsidian-0.0.1
+PackageName=enlazadorobsidian-0.0.2
 CreateEachDirectory=1
 Packager=1
 Systems=debian

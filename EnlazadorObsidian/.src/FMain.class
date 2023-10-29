@@ -12,6 +12,8 @@ Public Sub RellenarPrevisualizacionDeEnlace()
 
   Dim Textoopcional As String
   Dim ultimo As String[]
+  Dim ruta As Boolean
+  Dim comentario As String
 
   TextBoxRutaConvertida.Text = ""
 
@@ -21,11 +23,23 @@ Public Sub RellenarPrevisualizacionDeEnlace()
     TextoOpcional = ""
   Endif
 
+  If Upper(Mid(TextBoxRuta.Text, 1, 5)) = "FILE:" Then
+    Try TextBoxRuta.Text = Mid(TextBoxRuta.TEXT, 6, Len(TextBoxRuta.TEXT))
+  Endif
+
+  If IsDir(TextBoxRuta.Text) Then
+    'se trata de una ruta
+    comentario = "carpeta"
+  Else
+    comentario = "archivo"
+    'se trata de un fichero
+  Endif
+
   Try TextBoxRutaConvertida.Text = "[" & textoOpcional & TextBoxRuta.Text & "]" & convertirEnlace(TextBoxRuta.Text)
 
   Try ultimo = Split(TextBoxRuta.text, "/")
 
-  Try TextBoxRutaConvertida.Text = "> [!Enlace a: " & Upper(ultimo[ultimo.count - 1]) & "] \n> " & TextBoxRutaConvertida.Text
+  Try TextBoxRutaConvertida.Text = "> [!Enlace a " & comentario & ": " & Replace(ultimo[ultimo.count - 1], "%20", " ") & "] \n> " & TextBoxRutaConvertida.Text
 
 End
 
