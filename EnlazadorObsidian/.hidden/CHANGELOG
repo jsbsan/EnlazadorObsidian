@@ -1,3 +1,6 @@
+* Mon Oct 30 2023 jsbsan <jusabejusabe@gmail.com> 0.0.3
+- Elimina %20 en el nombre inicial del fichero o carpeta
+
 * Sun Oct 29 2023 jsbsan <jusabejusabe@gmail.com> 0.0.2
 
 * Sat Oct 28 2023 jsbsan <jusabejusabe@gmail.com> 0.0.1

@@ -27,6 +27,8 @@ Public Sub RellenarPrevisualizacionDeEnlace()
     Try TextBoxRuta.Text = Mid(TextBoxRuta.TEXT, 6, Len(TextBoxRuta.TEXT))
   Endif
 
+  TextBoxRuta.Text = Replace(TextBoxRuta.Text, "%20", " ")
+
   If IsDir(TextBoxRuta.Text) Then
     'se trata de una ruta
     comentario = "carpeta"
@@ -38,6 +40,10 @@ Public Sub RellenarPrevisualizacionDeEnlace()
   Try TextBoxRutaConvertida.Text = "[" & textoOpcional & TextBoxRuta.Text & "]" & convertirEnlace(TextBoxRuta.Text)
 
   Try ultimo = Split(TextBoxRuta.text, "/")
+
+  If ultimo[ultimo.count - 1] = "" Then
+    Try ultimo.Delete(ultimo.COUNT - 1)
+  Endif
 
   Try TextBoxRutaConvertida.Text = "> [!Enlace a " & comentario & ": " & Replace(ultimo[ultimo.count - 1], "%20", " ") & "] \n> " & TextBoxRutaConvertida.Text
 
